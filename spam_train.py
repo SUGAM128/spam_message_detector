@@ -17,7 +17,7 @@ def process_text(text):
 
 
 if __name__== "__main__":
-    df=pd.read_csv("spam_detector/spam_data.csv",usecols=[0,1],encoding="latin-1")  
+    df=pd.read_csv("spam_data.csv",usecols=[0,1],encoding="latin-1")  
 
     # df=df[['v1','v2']]
     df.columns=['Level','Message']
@@ -48,8 +48,8 @@ if __name__== "__main__":
     accuracy_NB=accuracy_score(y_test,y_pred)
    
 
-    joblib.dump(model,"spam_detector/spam_model_NB.pkl")
-    joblib.dump(vectorizer,"spam_detector/_spam_vectorizer.pkl")
+    joblib.dump(model,"spam_model_NB.pkl")
+    joblib.dump(vectorizer,"_spam_vectorizer.pkl")
 
     #logistic_regression model
 
@@ -59,7 +59,7 @@ if __name__== "__main__":
     y_pred_LG=model.predict(x_test)
 
     accuracy_LG=accuracy_score(y_test,y_pred_LG)
-    joblib.dump(model,"spam_detector/_spam_model_LG.pkl")
+    joblib.dump(model,"_spam_model_LG.pkl")
 
     print("Accuracy_multinominal: ",int(accuracy_NB*100),"%","\nAccuracy_logistic: ",int(accuracy_LG*100),"%")
 
