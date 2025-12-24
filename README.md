@@ -15,6 +15,5 @@ A Python-based SMS spam detection system that classifies messages as **spam**, *
 2. Run the user input script to check messages:
 ```bash
 python spam_train.py
-```bash
 python spam_detection.py
 
