@@ -2,8 +2,8 @@ from spam_train import process_text
 import joblib
 
 # model=joblib.load("spam_detector/spam_model_NB.pkl")
-model=joblib.load("spam_detector/_spam_model_LG.pkl")
-vectorizer=joblib.load("spam_detector/_spam_vectorizer.pkl")
+model=joblib.load("_spam_model_LG.pkl")
+vectorizer=joblib.load("_spam_vectorizer.pkl")
 
 def spam_check(message):
     message=process_text(message)
